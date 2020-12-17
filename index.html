@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>kindle-dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./web/css/tachyons.css">
+    <link rel="stylesheet" href="./web/css/weather-icons.min.css">
+    <link rel="stylesheet" href="./web/style.css">
+    <script src="./web/vendor/d3js.js"></script>
+</head>
+<body>
+
+<!-- time -->
+<div class="flex items-center mb2">
+    <div id="time" class="mr2"></div>
+    <div id="day"></div>
+</div>
+
+<!-- temperatures -->
+<div class="card">
+    <div class="card__content">
+        <div class="flex justify-between">
+            <div class="weather mb2">
+                <div class="labeled__text">
+                    <span class="name mr2"></span>
+                    <i class="labeled__suffix wi icon"></i>
+                </div>
+            </div>
+            <div class="temperature">
+                <div class="labeled__text">
+                    <span class="temp"></span>
+                    <span class="labeled__suffix">°</span>
+                    /
+                    <span class="f3">
+                        <span class="temp-feels f2"></span>°
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="temp">
+            <div class="labeled-list">
+                <div class="labeled">
+                    <div class="labeled__label">Morning</div>
+                    <div class="labeled__text">
+                        <span class="temp-morn"></span>
+                        <span class="labeled__suffix">°</span>
+                    </div>
+                </div>
+                <div class="labeled">
+                    <div class="labeled__label">Day</div>
+                    <div class="labeled__text">
+                        <span class="temp-max"></span>
+                        <span class="labeled__suffix">°</span>
+                    </div>
+                </div>
+                <div class="labeled">
+                    <div class="labeled__label">Evening</div>
+                    <div class="labeled__text">
+                        <span class="temp-eve"></span>
+                        <span class="labeled__suffix">°</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- sun -->
+<div class="card overflow-hidden">
+    <div class="card__content">
+        <div class="sun__graph">
+            <div class="sun__label">
+                <div class="labeled__label">Sunrise</div>
+                <div class="labeled__text">
+                    <div class="sunrise"></div>
+                </div>
+            </div>
+            <div class="sun__wrap">
+                <div class="sun__rotate">
+                    <i class="sun__icon wi wi-solar-eclipse"></i>
+                    <div class="sun"></div>
+                    <i class="sun__icon sun__icon--moon wi wi-moon-waxing-crescent-5"></i>
+                </div>
+                <div class="sun__overlay"></div>
+            </div>
+            <div class="sun__label">
+                <div class="labeled__label">Sunset</div>
+                <div class="labeled__text">
+                    <div class="sunset"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card__content">
+        <svg id="hourly-weather" height=500 width=500></svg>
+    </div>
+</div>
+
+<div class="colorscale"></div>
+<div class="colorscale-manual">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<script type="module">
+    import setup from "./web/index.js";
+
+    setup();
+</script>
+</body>
+</html>
